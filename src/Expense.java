@@ -17,6 +17,18 @@ public class Expense {
         this.category = category;
     }
 
+    public Expense(int id, String description, double amount, String category) {
+        // New constructor for file read expenses to include ID.
+        this.iD = id;
+        this.description = description;
+        this.amount = amount;
+        this.category = category;
+
+        if (id >= nextID) {
+            nextID = id + 1;
+        }
+    }
+
     public int getID() {
         return this.iD;
     }
@@ -31,6 +43,18 @@ public class Expense {
 
     public String getCategory() {
         return this.category;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
 }
